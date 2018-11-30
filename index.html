@@ -43,6 +43,16 @@
         	border-bottom-color: #FC0;
         }
     </style>
+    <script>
+        function handleOutboundLinkClicks(event) {
+            ga('send', 'event', {
+                eventCategory: 'App Download',
+                eventAction: 'click',
+                eventLabel: event.target.href,
+                transport: 'beacon'
+            });
+        }
+    </script>
 </head>
 <body>
     <main class="container">
@@ -55,7 +65,7 @@
                     <p class="lead">Busque por locais mais próximos a você com a visualização no modo mapa, ou utilize os filtros de busca para encontrar o local certo que você precisa.</p>
                     <hr class="my-4">
                     <p>Disponível para dispositivos com Sistema Android versão 6 ou superior. <br />Requer a instalcção do recurso <a href="https://play.google.com/store/apps/details?id=com.google.android.webview&hl=pt_BR" target="_blank">Android Webview</a>.</p>
-                    <a class="btn btn-warning btn-lg" href="https://github.com/smdufc/daerecomenda/releases/download/1.0/daerecomenda-v1.apk" target="_blank" role="button">Baixar aplicativo <small>(APK)</small></a>
+                    <a onclick="handleOutboundLinkClicks()" class="btn btn-warning btn-lg" href="https://github.com/smdufc/daerecomenda/releases/download/1.0/daerecomenda-v1.apk" target="_blank" role="button">Baixar aplicativo <small>(APK)</small></a>
                 </div>
             </div>
         </section>
@@ -66,5 +76,6 @@
             <small><strong>Design e Desenvolvimento</strong> - <a href="https://github.com/falmeidaco" target="_blank">Felipe Almeida</a></small>
         </p>
     </footer>
+    
 </body>
 </html>
